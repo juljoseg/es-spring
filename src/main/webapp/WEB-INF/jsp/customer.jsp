@@ -17,6 +17,8 @@
 		Find Customer by id : 
 		<input id="customerId" name="customerId" maxlength="20"> 
 		<input type="submit" value="Search">
+		
+		<c:out value="${message}" />
 	</form>
 
 	<br>

@@ -75,6 +75,9 @@ public class CustomerWebController {
 		model.addAttribute("customerList",this.customerList );
 		model.addAttribute("customer",customer );
 		
+		if(customer == null)
+			model.addAttribute("message", " customer id does not exist " );
+		
 		return "customer";
 	}
 	
@@ -83,8 +86,6 @@ public class CustomerWebController {
 		//List all cust
 		
 		this.customerList.clear();
-		
-		customerService.findAll().forEach(System.out::println);
 		
 		customerService.findAll().forEach(c -> this.customerList.add(c));
 				
